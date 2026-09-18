@@ -1,0 +1,51 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "4d1407fe73a5539ae940",
+  "position": {
+    "x": 1219.6920574481064,
+    "y": 604.16776030017934,
+    "z": 0,
+    "height": 320.25433910648604,
+    "width": 588.26860871333247
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sheet3"
+                    }
+                  },
+                  "Property": "Need to pull new column in DIM_EAP_SESN_MDL"
+                }
+              },
+              "queryRef": "Sheet3.Need to pull new column in DIM_EAP_SESN_MDL",
+              "nativeQueryRef": "Need to pull new column in DIM_EAP_SESN_MDL"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sheet3"
+                    }
+                  },
+                  "Property": "Column name=> SESN_MDL_SHRT_CD"
+                }
+              },
+              "queryRef": "Sheet3.Column name=> SESN_MDL_SHRT_CD",
+              "nativeQueryRef": "Column name=> SESN_MDL_SHRT_CD"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
