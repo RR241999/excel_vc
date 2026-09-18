@@ -1,0 +1,56 @@
+table 'BHF connection validation'
+	lineageTag: f3c69c3e-4f14-4b44-9e7a-481cc384d4d7
+
+	column bhf
+		dataType: string
+		lineageTag: 6ef5a089-4997-4b9c-8dd0-5113f63bc844
+		summarizeBy: none
+		sourceColumn: bhf
+
+		annotation SummarizationSetBy = Automatic
+
+	column prod
+		dataType: string
+		lineageTag: e832627d-26f6-4f93-8308-c666c206e545
+		summarizeBy: none
+		sourceColumn: prod
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: e7c8d393-e630-49a8-81cf-9259d80f1b8c
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: e00c7363-8f59-4c01-a8e3-f08df9b62f8f
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column UAT
+		dataType: string
+		lineageTag: a7be88d4-ae2c-4f11-8a8c-99f13cfba6e3
+		summarizeBy: none
+		sourceColumn: UAT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'BHF connection validation' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\AM79279\OneDrive - Elevance Health\Desktop\Notes\Vc_excel_desktop\excel_vc\Metrix.xlsx"), null, true),
+				    #"BHF connection validation_Sheet" = Source{[Item="BHF connection validation",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"BHF connection validation_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"bhf", type text}, {"prod", type text}, {"Column3", type text}, {"Column4", type any}, {"UAT", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,32 @@
+table Sheet3
+	lineageTag: df28faae-93e7-4d22-9b61-01c68add30aa
+
+	column 'Need to pull new column in DIM_EAP_SESN_MDL'
+		dataType: string
+		lineageTag: a8b674e8-abbf-4f2a-aea0-b0730a54ef0c
+		summarizeBy: none
+		sourceColumn: Need to pull new column in DIM_EAP_SESN_MDL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Column name=> SESN_MDL_SHRT_CD'
+		dataType: string
+		lineageTag: 3afc5736-7a83-4ef2-999d-5dbf54101d4d
+		summarizeBy: none
+		sourceColumn: Column name=> SESN_MDL_SHRT_CD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sheet3 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\AM79279\OneDrive - Elevance Health\Desktop\Notes\Vc_excel_desktop\excel_vc\Metrix.xlsx"), null, true),
+				    Sheet3_Sheet = Source{[Item="Sheet3",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet3_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Need to pull new column in DIM_EAP_SESN_MDL", type any}, {"Column name=> SESN_MDL_SHRT_CD", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

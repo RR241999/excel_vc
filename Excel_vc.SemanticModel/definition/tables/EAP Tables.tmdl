@@ -1,0 +1,63 @@
+table 'EAP Tables'
+	lineageTag: 8d403be2-a71d-4992-8f25-0a3f42ed52bc
+
+	column Column1
+		dataType: string
+		lineageTag: 03cff232-a078-4079-8003-0304db29541a
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: c3bd1f5b-17b7-467b-af4d-3cdba0c88aa1
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: eb1ff4fe-c746-49f4-bc8b-464b4cf232e9
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 698f580f-e7b6-4024-861f-14eaa5f11abd
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: e6ee0f8f-fb46-4a8b-b31d-b6bfd1ce5c77
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 7a176401-1688-4e2d-8830-b04eb0cf505b
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'EAP Tables' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\AM79279\OneDrive - Elevance Health\Desktop\Notes\Vc_excel_desktop\excel_vc\Metrix.xlsx"), null, true),
+				    #"EAP Tables_Sheet" = Source{[Item="EAP Tables",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"EAP Tables_Sheet",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

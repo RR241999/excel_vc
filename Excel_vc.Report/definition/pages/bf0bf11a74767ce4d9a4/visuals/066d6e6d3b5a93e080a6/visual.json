@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "066d6e6d3b5a93e080a6",
+  "position": {
+    "x": 11.338669865510161,
+    "y": 0,
+    "z": 0,
+    "height": 501.73614154882466,
+    "width": 756.85621352280327,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "On prem server"
+                    }
+                  },
+                  "Property": "VA10PWPSAS415:10001"
+                }
+              },
+              "queryRef": "On prem server.VA10PWPSAS415:10001",
+              "nativeQueryRef": "VA10PWPSAS415:10001"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "bcda263018530a9338e3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "On prem server"
+              }
+            },
+            "Property": "VA10PWPSAS415:10001"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

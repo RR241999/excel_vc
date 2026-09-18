@@ -1,0 +1,25 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Flow in fabric to update latest","BHF connection validation","EAP Tables","On prem server","Sheet2","Sheet3","Snowfalke database"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Flow in fabric to update latest'
+ref table 'BHF connection validation'
+ref table 'EAP Tables'
+ref table 'On prem server'
+ref table Sheet2
+ref table Sheet3
+ref table 'Snowfalke database'
+
+ref cultureInfo en-US
+

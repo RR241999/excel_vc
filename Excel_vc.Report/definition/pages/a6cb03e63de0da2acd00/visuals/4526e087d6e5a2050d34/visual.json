@@ -1,0 +1,83 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "4526e087d6e5a2050d34",
+  "position": {
+    "x": 856.06957484601719,
+    "y": 377.0107730282129,
+    "z": 0,
+    "height": 411.02678262474336,
+    "width": 1063.0002998915777
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Flow in fabric to update latest"
+                    }
+                  },
+                  "Property": "Column2"
+                }
+              },
+              "queryRef": "Flow in fabric to update latest.Column2",
+              "nativeQueryRef": "Column2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Flow in fabric to update latest"
+                    }
+                  },
+                  "Property": "Column1"
+                }
+              },
+              "queryRef": "Flow in fabric to update latest.Column1",
+              "nativeQueryRef": "Column1"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d9801401d6b2b1caa00a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Flow in fabric to update latest"
+              }
+            },
+            "Property": "Column2"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "29ab69ee9302d08b91ab",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Flow in fabric to update latest"
+              }
+            },
+            "Property": "Column1"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

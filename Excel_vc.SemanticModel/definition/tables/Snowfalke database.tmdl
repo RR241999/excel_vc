@@ -1,0 +1,31 @@
+table 'Snowfalke database'
+	lineageTag: cd7dfc65-79d5-40ad-948e-ccdf94d5293a
+
+	column Column1
+		dataType: string
+		lineageTag: 20c7e52f-97ba-4715-af7e-2752e0b09cc4
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: b719d16a-cfa3-4c8e-86af-575fc2b29478
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Snowfalke database' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\AM79279\OneDrive - Elevance Health\Desktop\Notes\Vc_excel_desktop\excel_vc\Metrix.xlsx"), null, true),
+				    #"Snowfalke database_Sheet" = Source{[Item="Snowfalke database",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Snowfalke database_Sheet",{{"Column1", type text}, {"Column2", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "96d21a6f8a4008908dc1",
+  "position": {
+    "x": 416.69611755749844,
+    "y": 634.965512468569,
+    "z": 1,
+    "height": 314.648088767907,
+    "width": 632.13084500219145
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Flow in fabric to update latest"
+                    }
+                  },
+                  "Property": "Column1"
+                }
+              },
+              "queryRef": "Flow in fabric to update latest.Column1",
+              "nativeQueryRef": "Column1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Flow in fabric to update latest"
+                    }
+                  },
+                  "Property": "Column2"
+                }
+              },
+              "queryRef": "Flow in fabric to update latest.Column2",
+              "nativeQueryRef": "Column2"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "165b37afe0c88daac42a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Flow in fabric to update latest"
+              }
+            },
+            "Property": "Column1"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "de42ca67b2d0bed3aea9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Flow in fabric to update latest"
+              }
+            },
+            "Property": "Column2"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

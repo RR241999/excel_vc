@@ -1,0 +1,31 @@
+table 'Flow in fabric to update latest'
+	lineageTag: be193d07-fbae-4968-a402-a0855525a3e2
+
+	column Column1
+		dataType: string
+		lineageTag: 5009c05f-218f-4ce3-a0ad-3cfec7ab3fbf
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 7edb96dc-8f1d-4ded-b757-ae80dff668a1
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Flow in fabric to update latest' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\AM79279\OneDrive - Elevance Health\Desktop\Notes\Vc_excel_desktop\excel_vc\Metrix.xlsx"), null, true),
+				    #"Flow in fabric to update latest_Sheet" = Source{[Item="Flow in fabric to update latest",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(#"Flow in fabric to update latest_Sheet",{{"Column1", type text}, {"Column2", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

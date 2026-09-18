@@ -1,0 +1,32 @@
+table 'On prem server'
+	lineageTag: 26803c41-5ff7-4ea4-814e-913871108878
+
+	column VA10PWPSAS415:10001
+		dataType: string
+		lineageTag: 721cf5cf-44a9-43bc-843d-68ba2d1eeaf8
+		summarizeBy: none
+		sourceColumn: VA10PWPSAS415:10001
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' - Product Analytics (Processing server)'
+		dataType: string
+		lineageTag: 61caeaf6-730e-45f2-9e59-3985eed53fb4
+		summarizeBy: none
+		sourceColumn: " - Product Analytics (Processing server)"
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'On prem server' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\AM79279\OneDrive - Elevance Health\Desktop\Notes\Vc_excel_desktop\excel_vc\Metrix.xlsx"), null, true),
+				    #"On prem server_Sheet" = Source{[Item="On prem server",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"On prem server_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"VA10PWPSAS415:10001", type text}, {" - Product Analytics (Processing server)", type any}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

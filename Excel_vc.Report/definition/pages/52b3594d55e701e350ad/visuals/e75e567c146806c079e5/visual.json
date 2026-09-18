@@ -1,0 +1,111 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "e75e567c146806c079e5",
+  "position": {
+    "x": 861.73890977877227,
+    "y": 294.80541650326421,
+    "z": 0,
+    "height": 331.65609356617222,
+    "width": 700.1628641952525
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "EAP Tables"
+                    }
+                  },
+                  "Property": "Column2"
+                }
+              },
+              "queryRef": "EAP Tables.Column2",
+              "nativeQueryRef": "Column2"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "EAP Tables"
+                    }
+                  },
+                  "Property": "Column4"
+                }
+              },
+              "queryRef": "EAP Tables.Column4",
+              "nativeQueryRef": "Column4"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "EAP Tables"
+                    }
+                  },
+                  "Property": "Column3"
+                }
+              },
+              "queryRef": "EAP Tables.Column3",
+              "nativeQueryRef": "Column3"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3bfa0df3a98896183184",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "EAP Tables"
+              }
+            },
+            "Property": "Column2"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "75481a27d045962a4085",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "EAP Tables"
+              }
+            },
+            "Property": "Column4"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "53e683ecc1034c5b3e95",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "EAP Tables"
+              }
+            },
+            "Property": "Column3"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
